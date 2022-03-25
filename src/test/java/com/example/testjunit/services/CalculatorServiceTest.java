@@ -29,28 +29,28 @@ public class CalculatorServiceTest {
     @Test
     @DisplayName("deve retornar o valor da soma se passados os valores de a e b ")
     public void deve_retornar_valor_da_soma_se_passado_valores_de_A_e_B() {
-        int result = calculatorService.add(1,2);
+        double result = calculatorService.add(1d,2d);
         assertEquals(3, result);
     }
 
     @Test
     @DisplayName("deve retornar o valor da subtracao de A-B se passados os valores de a e b ")
     public void deve_retornar_valor_da_subtracao_se_passado_valores_de_A_e_B() {
-        int result = calculatorService.minus(5,3);
+        double result = calculatorService.minus(5d,3d);
         assertEquals(2, result);
     }
 
     @Test
     @DisplayName("deve retornar o valor da multiplicação de A x B se passados os valores de a e b ")
     public void deve_retornar_valor_da_multiplicacao_se_passado_valores_de_A_e_B() {
-        int result = calculatorService.multiply(5,3);
+        double result = calculatorService.multiply(5d,3d);
         assertEquals(15, result);
     }
 
     @Test
     @DisplayName("deve retornar o valor da divisao de A / B se passados os valores de a e b e se B <> 0 ")
     public void deve_retornar_valor_da_divisao_se_passado_valores_de_A_e_B_e_se_B_diferente_de_zero() {
-        Double result = calculatorService.divide(15,3);
+        double result = calculatorService.divide(15d,3d);
         assertEquals(5D, result);
     }
 
@@ -58,7 +58,7 @@ public class CalculatorServiceTest {
     @DisplayName("deve lançar a exceção  se passados os valores de a e b e se B <> 0 ")
     public void deve_lancar_a_excecao_se_B_igual_zero() {
         assertThrows(ArithmeticException.class, () -> {
-           calculatorService.divide(15,0);
+           calculatorService.divide(15d,0d);
         });
     }
 
@@ -66,7 +66,7 @@ public class CalculatorServiceTest {
     @Test
     @DisplayName("deve calcular a média de 2 numeros")
     public void deve_calcular_a_media_de_dois_numeros() {
-        Double result = averageService.avarage(10, 2);
+        double result = averageService.avarage(10d, 2d);
         assertEquals(6, result);
     }
 

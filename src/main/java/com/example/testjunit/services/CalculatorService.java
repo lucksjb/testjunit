@@ -8,28 +8,31 @@ public class CalculatorService {
     @Autowired
     private OperationsService operationsService;
 
-    public int add(int a, int b) {
-        operationsService.sendMessage(String.format("add %d + %d",a,b));
-        return a + b;
+    public Double add(Double a, Double b) {
+        operationsService.sendMessage(String.format("add %f + %f",a,b));
+        return a+b;
     }
 
-    public int minus(int a, int b) {
-        operationsService.sendMessage(String.format("minus %d + %d",a,b));
+    public Double minus(Double a, Double b) {
+        operationsService.sendMessage(String.format("minus %f + %f",a,b));
         return a - b;
     }
 
-    public int multiply(int a, int b) {
-        operationsService.sendMessage(String.format("multiply %d + %d",a,b));
+    public Double multiply(Double a, Double b) {
+        operationsService.sendMessage(String.format("multiply %f + %f",a,b));
         return a * b;
     }
 
-    public Double divide(int a, int b) {
-        operationsService.sendMessage(String.format("divide %d + %d",a,b));
-        return (double) (a / b);
+    public Double divide(Double a, Double b) {
+        operationsService.sendMessage(String.format("divide %f + %f",a,b));
+        if(b==0) {
+            throw new ArithmeticException("invalid operation - divide by zero");
+        }
+        return (a / b);
     }
 
-    public Double addOneOnValueAndDivideByTwo(int a) {
-        int result = operationsService.addOneOnValue(a);
-        return (double) (result / 2);
+    public Double addOneOnValueAndDivideByTwo(Double a) {
+        Double result = operationsService.addOneOnValue(a);
+        return (result / 2);
     }
 }

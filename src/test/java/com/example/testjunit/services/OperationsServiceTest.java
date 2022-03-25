@@ -17,7 +17,7 @@ public class OperationsServiceTest {
     @Test
     @DisplayName("deve retornar o valor passado como parametros acrescido de 1 ")
     public void deve_retornar_o_valor_mais_um() {
-        int result = operationsService.addOneOnValue(10);
+        Double result = operationsService.addOneOnValue(10d);
         assertEquals(11, result);
     }
 

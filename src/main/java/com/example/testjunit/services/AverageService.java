@@ -5,12 +5,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AverageService {
+ 
     @Autowired
     private CalculatorService calculatorService;
-    
-    public Double avarage(int a, int b) {
-        int result = calculatorService.add(a, b);
-        return calculatorService.divide(result,2);
+
+    public Double avarage(Double a, Double b) {
+        Double result = calculatorService.add(a, b);
+        Double divResult = calculatorService.divide(result,2d);
+        return divResult;
 
     }
 }

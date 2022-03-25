@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class OperationsService {
-    public int addOneOnValue(int value) {
-        int result = value+1;
+    public Double addOneOnValue(Double value) {
+        Double result = value+1;
         return result;
     }
 
